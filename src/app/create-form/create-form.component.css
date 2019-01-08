@@ -1,0 +1,54 @@
+
+  .popup-container {
+    top: 165px;
+    left: 427px;
+    position: fixed;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 0px 40px;
+    border: 1px solid gray;
+    background-color: white;
+    max-width: 700px;
+    font-size: 15px;
+    font-family: calibri;
+    color: black;
+    width: 50%;
+    font-weight: bold;
+}
+.block{
+    margin-bottom: 16px;
+}
+.popup-container input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+}
+.popup-container input[type=submit],input[type=button] {
+    background-color: #468c00;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+}
+.popup-container span{
+    color: red;
+    font-size: 13px;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+.list-content{
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+.list-content label{
+    margin-bottom: 6px;
+}
+.list-content input[type=number]{
+    width: 100%;
+    padding: 12px;
+    margin-right: 10px;
+}
+input[disabled]{
+    background-color: grey !important;
+}

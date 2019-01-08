@@ -1,0 +1,53 @@
+<app-contacts></app-contacts>
+<div id="overlay">
+  <div class="popup-container">
+          <form id="addContactForm" #form='ngForm' (ngSubmit)="createContact(form)">
+              <div class="block">
+            <label for="name">Name</label>
+            <input ngModel="{{contact?.name}}" #name="ngModel" type="text" id="name" name="name" placeholder="Your name.." required>
+            <span *ngIf="name.invalid && (name.dirty || name.touched)" id="nameRequired">*name is required</span>
+              </div>
+              <div class="block">
+            <label for="email">Email</label>
+            <input ngModel="{{contact?.email}}" #email="ngModel" type="text" id="email" name="email" placeholder="Your email.." required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+            <span *ngIf="email.invalid && (email.dirty || email.touched)" id="emailRequired">
+              <span *ngIf="email.errors.pattern">
+                Please enter valid mail
+              </span>
+              <span *ngIf="email.errors.required">
+                  *email is required
+                </span>
+            </span>
+          </div>
+            <div class="content">
+            <div class="list-content">
+            <label for="mobile">Mobile</label>
+            <input ngModel="{{contact?.mobile}}" #mobile="ngModel" type="text" id="mobile" name="mobile" placeholder="Your mobile.." required minlength="10"> 
+            <span *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" id="mobileRequired">
+                <span *ngIf="mobile.errors.minlength">
+                    Please enter valid mobile number
+                  </span>
+                  <span *ngIf="mobile.errors.required">
+                      *mobile is required
+                    </span>
+            </span>
+              </div>
+          <div class="list-content">
+            <label for="landline">Landline</label>
+            <input ngModel="{{contact?.landline}}" type="number" id="landline" name="landline" placeholder="Your landline..">
+          </div>
+          </div>
+          <div class="block">
+            <label for="website">website</label>
+            <input ngModel="{{contact?.website}}" type="text" id="website" name="website" placeholder="Your website..">
+          </div>
+          <div class="block">
+            <label for="subject">Address</label>
+            <textarea ngModel="{{contact?.address}}" id="address" name="address" style="height:200px"></textarea>
+          </div>
+           <input id="addContactButton" type="submit" value="Add" [disabled]="!form.valid">
+           
+            <a routerLink="/index"><input id="cancel" type="button" value="Cancel"></a>
+          </form>
+        </div>
+      </div>

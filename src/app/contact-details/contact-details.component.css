@@ -1,0 +1,44 @@
+:host{
+    width: 100%;
+    display: flex;
+}
+.contact-info{
+    display: flex;
+    margin-left: 60px;
+    font-size: 15px;
+    font-family:calibri;
+}
+.display-contact{
+        width: 300px;
+}
+.display-contact p{
+    margin-bottom: 10px;
+}
+.display-contact  div p{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+    .contact-container{
+        display: flex;
+    }
+    .icons{
+        display: inline;
+        margin:20px 50px;
+    }
+    .icons img{
+        margin-right: 5px;
+    }
+    .icons span{
+        margin-right: 10px;
+    } 
+    #image-1{
+        width: 15px;
+        height: 15px;
+      }
+      #image-2{
+          vertical-align: sub;
+      }
+      #delete :hover{
+        cursor: pointer;
+      }

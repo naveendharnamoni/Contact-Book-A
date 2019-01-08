@@ -1,0 +1,23 @@
+<app-contacts></app-contacts>
+<div *ngIf="contact" class="contact-info">
+    <div class="contact-container">
+      <div class="display-contact">
+        <h1 id="display-name">{{contact.name}}</h1>
+        <p id="display-email">{{contact.email}}</p>
+        <div>
+        <p id="display-phone">{{contact.phone}}</p>
+        <p id="display-landline">{{contact.landline}}</p>
+        </div>
+        <p id="display-website">{{contact.website}}</p>
+        <p id="display-address">{{contact.address}}</p>
+    </div>
+    <div class="icons">
+      <div id="edit">
+      <a routerLink="/edit/{{contact.id}}"><img id="image-1" src="assets/Edit-icon.png" alt="edit"><span >EDIT</span></a>
+      </div>
+      <div id="delete" (click)="deleteContact()">
+      <img id="image-2" src="assets/delete1.png" alt="delete"><span>DELETE</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.contacts{
+    width: 385px;
+}
+.contacts a{
+    text-decoration: none;
+}
+.contact{
+    font-size: 15px;
+    font-family: calibri;
+    border: 1px solid grey;
+    padding: 10px;
+}
+.contact p{
+    margin: 0px;
+}
+.contact h1{
+    margin-top: 0px;
+    margin-bottom: 6px;
+    font-weight: lighter;
+}
+.contact:not(:first-of-type){
+    border-top: 0;
+}
+.contact:hover{
+    background-color: lightgray;
+}
+.contact:active,.active{
+    background-color: lightblue;
+}

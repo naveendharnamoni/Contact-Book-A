@@ -1,0 +1,8 @@
+<div class="contacts">
+  <a *ngFor="let contact of contacts"  routerLink="/detail/{{contact.id}}"><div class="contact" id="{{contact.id}}" [class.active]="contact === selectedContact" (click)="onSelect(contact)">
+    <h1 class = "pname">{{contact.name}}</h1>
+    <p class="pemail">{{contact.email}}</p>
+    <p class="pmobile">{{contact.mobile}}</p>
+  </div>
+</a>
+</div>

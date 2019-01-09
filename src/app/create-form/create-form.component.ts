@@ -61,12 +61,12 @@ export class CreateFormComponent implements OnInit {
   }
 
   signupForm = new FormGroup({
-    name : new FormControl(this.contact ? this.contact.name : '',Validators.required,),
-    email : new FormControl(this.contact? this.contact.email : '',[Validators.required,Validators.email]),
-     mobile : new FormControl(this.contact? this.contact.mobile: '',[Validators.required,Validators.minLength(10)]),
-     landline : new FormControl(this.contact? this.contact.landline: '',Validators.required),
-     website : new FormControl(this.contact? this.contact.website:'',Validators.required),
-     address : new FormControl(this.contact? this.contact.address:'',Validators.required)
+    name : new FormControl('',Validators.required,),
+    email : new FormControl('',[Validators.required,Validators.email]),
+     mobile : new FormControl('',[Validators.required,Validators.minLength(10)]),
+     landline : new FormControl('',Validators.required),
+     website : new FormControl('',Validators.required),
+     address : new FormControl('',Validators.required)
     }) ;
 
   createContact(){

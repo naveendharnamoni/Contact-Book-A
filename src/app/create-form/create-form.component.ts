@@ -52,12 +52,14 @@ export class CreateFormComponent implements OnInit {
     console.log(this.contact);
   }
   setEditFormData(){
+    if(this.contact){
     this.name.setValue(this.contact.name);
     this.email.setValue(this.contact.email);
     this.mobile.setValue(this.contact.mobile);
     this.landline.setValue(this.contact.landline);
     this.website.setValue(this.contact.website);
     this.address.setValue(this.contact.address);
+    }
   }
 
   signupForm = new FormGroup({
@@ -71,25 +73,32 @@ export class CreateFormComponent implements OnInit {
 
   createContact(){
     console.log(this.signupForm);
-      if(this.contact == null){
-        this.service.add(new Contact(
-          CreateFormComponent.count+=1,
-          this.signupForm.value.name,
-          this.signupForm.value.email,
-          this.signupForm.value.mobile,
-          this.signupForm.value.landline,
-          this.signupForm.value.website,
-          this.signupForm.value.address
-        ));
+      if(this.signupForm.invalid){
+        this.signupForm.setErrors({
+          invalidForm: true
+        })
       }else{
-        this.contact.name = this.signupForm.value.name,
-        this.contact.email = this.signupForm.value.email,
-        this.contact.mobile = this.signupForm.value.mobile,
-        this.contact.landline = this.signupForm.value.landline,
-        this.contact.website = this.signupForm.value.website,
-        this.contact.address = this.signupForm.value.address
-        this.router.navigate(['/index']);
+        if(this.contact == null){
+          this.service.add(new Contact(
+            CreateFormComponent.count+=1,
+            this.signupForm.value.name,
+            this.signupForm.value.email,
+            this.signupForm.value.mobile,
+            this.signupForm.value.landline,
+            this.signupForm.value.website,
+            this.signupForm.value.address
+          ));
+        }else{
+          this.contact.name = this.signupForm.value.name,
+          this.contact.email = this.signupForm.value.email,
+          this.contact.mobile = this.signupForm.value.mobile,
+          this.contact.landline = this.signupForm.value.landline,
+          this.contact.website = this.signupForm.value.website,
+          this.contact.address = this.signupForm.value.address
+          this.router.navigate(['/index']);
+        }
       }
+     
     console.log(CreateFormComponent.count);
   }
 }
